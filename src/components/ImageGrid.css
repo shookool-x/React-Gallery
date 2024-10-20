@@ -1,0 +1,52 @@
+.img-grid {
+  width: 80%;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.img-grid .grid-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  opacity: 0.75;
+}
+
+.img-grid .grid-item:hover {
+  opacity: 1;
+}
+
+.img-grid .grid-item .main-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+
+  &:hover {
+    outline: 2px solid #DAD4B5;
+    outline-offset: -15px;
+  }
+}
+
+.img-grid .grid-item .del-butt {
+  position: absolute;
+  width: 10%;
+  aspect-ratio: 1;
+  bottom: 10%;
+  right: 10%;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.img-grid .grid-item:hover .del-butt {
+  opacity: 1;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}

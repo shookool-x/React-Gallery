@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Title from './components/Title'
+import './App.css'
+import UploadForm from './components/UploadForm'
+import ImageGrid from './components/ImageGrid'
+import { useState } from 'react'
+import Modal from './components/Modal'
 
-function App() {
+export default function App() {
+
+  const [image, setImage] = useState<string>('')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title />
+      <UploadForm />
+      <ImageGrid setImage={setImage} />
+      {image && <Modal image={image} setImage={setImage} />}
     </div>
-  );
+  )
 }
-
-export default App;

@@ -1,0 +1,43 @@
+form {
+  text-align: center;
+  direction: rtl;
+  margin-block: 20px;
+  color: #982B1C;
+}
+
+.choose-file input[type="file"] {
+  display: none;
+}
+
+@property --fill-button {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: false;
+}
+
+.choose-file {
+  display: inline-block;
+  padding: 10px;
+  background: linear-gradient(to right, #982B1C var(--fill-button), transparent var(--fill-button));
+  color: #982B1C;
+  border: 2px solid #982B1C;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  transition-property: --fill-button, all;
+
+  &:hover {
+    --fill-button: 100%;
+    color: #DAD4B5;
+
+  }
+}
+
+form .output-form {
+  margin-block: 20px;
+  font-size: 0.8rem;
+}
+
+form .output-form .out-file {
+  direction: ltr;
+}
