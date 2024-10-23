@@ -39,7 +39,9 @@ export default function ImageGrid({ setImage }: ImageGridProps) {
   async function handleDelete(id: string, url: string) {
     const docRefrence = doc(db, 'images', id);
     await deleteDoc(docRefrence);
-    const storageRef = ref(storage, url);
-    await deleteObject(storageRef);
+
+    // for delete from storage
+    // const storageRef = ref(storage, url);
+    // await deleteObject(storageRef);
   }
 }
